@@ -74,10 +74,10 @@ test('É mostrado apenas um Pokémon por vez', () => {
 describe('Teste se a Pokédex tem os botões de filtro', () => {
   test('Deve existir um botão de filtragem para cada tipo de Pokémon', () => {
     renderWithRouter(<App />);
-    const quantButtons = 8;
+    const quantFilterButtons = 7;
 
     const getButtonsForTestId = screen.getAllByTestId('pokemon-type-button');
-    expect(AllButtons).toHaveLength(quantButtons);
+    expect(getButtonsForTestId).toHaveLength(quantFilterButtons);
 
     const AllButton = screen.getByRole('button', { name: /All/i });
     expect(AllButton).toBeInTheDocument();
